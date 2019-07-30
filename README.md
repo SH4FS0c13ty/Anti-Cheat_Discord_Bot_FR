@@ -1,5 +1,5 @@
 # Anti-Cheat Discord Bot
-Anti-Cheat v1.3 (The Masterkiller) by SH4FS0c13ty<br />
+Anti-Cheat v1.3 (The Masterkiller) par SH4FS0c13ty<br />
 Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.<br />
 <br />
 English version : https://github.com/SH4FS0c13ty/Anti-Cheat_Discord_Bot
@@ -84,7 +84,7 @@ OU D'AUTRES TRANSACTIONS DU LOGICIEL OU EN RAPPORT AVEC CELUI-CI.<br />
 
 Auteurs :
 <br />
-SH4FS0c13ty (Website: https://sh4fs0c13ty.tk/ , Twitter: @SH4FS0c13ty, Discord: SH4FS0c13ty#1562, Github: https://github.com/SH4FS0c13ty)<br />
-123321mario (Website: http://123321mario.tk/ , Twitter: @123321mario, Discord: 123321mario#1337, Github: https://github.com/123321mario)<br />
+SH4FS0c13ty (Site web : https://sh4fs0c13ty.tk/ , Twitter : @SH4FS0c13ty, Discord : SH4FS0c13ty#1562, Github : https://github.com/SH4FS0c13ty)<br />
+123321mario (Site web : http://123321mario.tk/ , Twitter : @123321mario, Discord : 123321mario#1337, Github : https://github.com/123321mario)<br />
 <br />
 Merci à Stanislav Vishnevskiy pour son module Discord OAuth2 (https://github.com/discordapp/discord-oauth2-example)
