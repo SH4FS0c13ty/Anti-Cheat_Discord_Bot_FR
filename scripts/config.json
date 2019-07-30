@@ -1,0 +1,8 @@
+{
+    "CLIENT_ID": "<ID_CLIENT>",
+    "CLIENT_SECRET": "<SECRET_CLIENT>",
+    "TOKEN": "<JETON>",
+    "HOST": "<HÔTE>",
+    "PORT": "<PORT>",
+    "REDIRECT_URL": "<URL_REDIRECTION>"
+}
