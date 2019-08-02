@@ -1,5 +1,5 @@
 # Anti-Cheat Discord Bot
-Anti-Cheat v1.3 (The Masterkiller) par SH4FS0c13ty<br />
+Anti-Cheat v1.3.1 (The Masterkiller) par SH4FS0c13ty<br />
 Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.<br />
 <br />
 English version : https://github.com/SH4FS0c13ty/Anti-Cheat_Discord_Bot
@@ -32,7 +32,7 @@ Voir les listes et la configuration d'Anti-Cheat :<br />
 Réinitialiser les listes et la configuration d'Anti-Cheat :<br />
 `reset config|cheaters_lists|servers_lists`<br />
 Définir la configuration d'Anti-Cheat :<br />
-`set CLIENT_ID|CLIENT_SECRET|TOKEN|HOST|PORT`<br />
+`set CLIENT_ID|CLIENT_SECRET|TOKEN|HOST|PORT|OAUTH_WINDOW|CHECKER_WINDOW`<br />
 <br />
 ### Fiichiers utilisés<br />
 Fichier de configuration :<br />
@@ -46,7 +46,7 @@ Les des IDs Discord des tricheurs :<br />
 Listes des IDs associés des tricheurs (<ID_POKEMON_GO>:<ID_DISCORD>):<br />
 `lists/Associated_IDs.txt`<br />
 Listes des serveurs des utilisateurs :<br />
-`server_lists/<DISCORD_ID>.txt`<br />
+`servers_lists/<DISCORD_ID>_servers_list.txt`<br />
 <br />
 N'oubliez pas de configurer Anti-Cheat avant de l'utiliser !<br />
 Pour le configurer, modifiez le fichier "config.json" ou utilisez la commande `set <PARAM>`.<br />
@@ -54,8 +54,9 @@ Vous devez aussi modifier les fichiers "blacklist.txt et "cheaters.xlsx" pour le
 <br />
 ### Commandes du bot
  - ./verify <URL_IMAGE_OU_IMAGE_INCLUSE>
- - ./kick <NOM_UTILISATEUR>
- - ./recheck <NOM_UTILISATEUR>
+ - ./kick <NOM_OU_ID_UTILISATEUR>
+ - ./recheck <NOM_OU_ID_UTILISATEUR>
+ - ./recheck_all
  
 ## Licence
 

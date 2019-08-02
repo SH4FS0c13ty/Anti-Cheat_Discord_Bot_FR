@@ -24,15 +24,25 @@ def show_config():
     HOST = res["HOST"]
     PORT = res["PORT"]
     REDIRECT_URL = res["REDIRECT_URL"]
+    OAUTH_WINDOW = res["OAUTH_WINDOW"]
+    CHECKER_WINDOW = res["CHECKER_WINDOW"]
 
-    print("Configuration actuelle d'Anti-Cheat")
     print("=========================================================================================")
-    print("ID_CLIENT :           " + CLIENT_ID)
-    print("SECRET_CLIENT :       " + CLIENT_SECRET)
-    print("JETON :               " + TOKEN)
-    print("HÔTE :                " + HOST)
-    print("PORT :                " + PORT)
-    print("URL_REDIRECTION :     " + REDIRECT_URL)
+    print("                           Configuration actuelle d'Anti-Cheat                           ")
+    print("=========================================================================================")
+    print("                                 Paramètres fonctionnels                                 ")
+    print("=========================================================================================")
+    print(" CLIENT_ID:            " + CLIENT_ID)
+    print(" CLIENT_SECRET:        " + CLIENT_SECRET)
+    print(" TOKEN:                " + TOKEN)
+    print(" HOST:                 " + HOST)
+    print(" PORT:                 " + PORT)
+    print(" REDIRECT_URL:         " + REDIRECT_URL)
+    print("=========================================================================================")
+    print("                                 Paramètres des fenêtres                                 ")
+    print("=========================================================================================")
+    print(" OAUTH_WINDOW:         " + OAUTH_WINDOW)
+    print(" CHECKER_WINDOW:       " + CHECKER_WINDOW)
     print("=========================================================================================")
     
 def show_cheaters_pid():
@@ -49,7 +59,9 @@ def reset_json():
           "TOKEN" : "<TOKEN>",
           "HOST" : "<HOST>",
           "PORT" : "<PORT>",
-          "REDIRECT_URL" : "<REDIRECT_URL>"
+          "REDIRECT_URL" : "<REDIRECT_URL>",
+          "OAUTH_WINDOW" : "SW_MINIMIZE",
+          "CHECKER_WINDOW": "SW_MINIMIZE"
           }
     try:
         json_file = open("scripts\\config.json", "w")

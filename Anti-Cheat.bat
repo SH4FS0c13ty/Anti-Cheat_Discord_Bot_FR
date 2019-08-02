@@ -10,7 +10,7 @@ echo ██╔══██║██║╚██╗██║   ██║   ██
 echo ██║  ██║██║ ╚████║   ██║   ██║      ╚██████╗██║  ██║███████╗██║  ██║   ██║   
 echo ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝       ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   
 echo.
-echo Anti-Cheat v1.3 (The Masterkiller) par SH4FS0c13ty
+echo Anti-Cheat v1.3.1 (The Masterkiller) par SH4FS0c13ty
 echo Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.
 echo.
 echo Tapez "help" pour voir le menu d'aide.
@@ -42,6 +42,8 @@ if /i "%start%" EQU "set TOKEN" goto set_token
 if /i "%start%" EQU "set HOST" goto set_host
 if /i "%start%" EQU "set PORT" goto set_port
 if /i "%start%" EQU "set REDIRECT_URL" goto set_redirect_url
+if /i "%start%" EQU "set OAUTH_WINDOW" goto set_oauth_win
+if /i "%start%" EQU "set CHECKER_WINDOW" goto set_checker_win
 
 echo Commande inconnue.
 
@@ -73,6 +75,8 @@ echo set TOKEN                         Définir la valeur BOT_TOKEN dans le fich
 echo set HOST                          Définir la valeur de l'adresse IP de l'hôte du serveur web
 echo set PORT                          Définir le numéro de port du serveur web dans le fichier de configuration
 echo set REDIRECT_URL                  Définir la valeur de l'URL pour la redirection dans le fichier de configuration
+echo set OAUTH_WINDOW                  Définir la valeur de l'état de la fenêtre du module Anti-Cheat OAuth2 dans le fichier de configuration
+echo set CHECKER_WINDOW                Définir la valeur de l'état de la fenêtre du module Anti-Cheat Checker dans le fichier de configuration
 goto prompt
 
 :about
@@ -85,7 +89,7 @@ echo ██╔══██║██║╚██╗██║   ██║   ██
 echo ██║  ██║██║ ╚████║   ██║   ██║      ╚██████╗██║  ██║███████╗██║  ██║   ██║   
 echo ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝       ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   
 echo.
-echo Anti-Cheat v1.3 (The Masterkiller) by SH4FS0c13ty
+echo Anti-Cheat v1.3.1 (The Masterkiller) by SH4FS0c13ty
 echo Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.
 echo.
 echo Ce projet est né sur une demande de 123321mario (http://123321mario.tk/) qui
@@ -212,7 +216,6 @@ goto reset_cheaters
 
 :reset_cheaters_did
 del /Q lists\\cheaters_ids
-echo.
 echo Liste des IDs Discord de tricheurs supprimée.
 echo.
 pause
@@ -220,7 +223,6 @@ goto reset_cheaters
 
 :reset_cheaters_pid
 del /Q lists\\cheaters.json
-echo.
 echo Liste des IDs Pokémon GO de tricheurs supprimée.
 echo.
 pause
@@ -228,7 +230,6 @@ goto reset_cheaters
 
 :reset_cheaters_aid
 del /Q lists\\Associated_IDs.txt
-echo.
 echo Liste des IDs associés de tricheurs supprimée.
 echo.
 pause
@@ -272,4 +273,18 @@ goto prompt
 
 :set_redirect_url
 scripts\\tools.py set REDIRECT_URL
+goto prompt
+
+:set_oauth_win
+echo La valeur de OAUTH_WINDOW doit être SW_HIDE, SW_MINIMIZE, SW_MAXIMIZE ou SW_SHOW.
+echo Sinon, la valeur utilisé sera la valeur par défaut SW_MINIMIZE.
+echo.
+scripts\\tools.py set OAUTH_WINDOW
+goto prompt
+
+:set_checker_win
+echo La valeur de CHECKER_WINDOW doit être SW_HIDE, SW_MINIMIZE, SW_MAXIMIZE ou SW_SHOW.
+echo Sinon, la valeur utilisé sera la valeur par défaut SW_MINIMIZE.
+echo.
+scripts\\tools.py set CHECKER_WINDOW
 goto prompt

@@ -2,7 +2,9 @@
     "CLIENT_ID": "<ID_CLIENT>",
     "CLIENT_SECRET": "<SECRET_CLIENT>",
     "TOKEN": "<JETON>",
-    "HOST": "<HÔTE>",
+    "HOST": "<HOTE>",
     "PORT": "<PORT>",
-    "REDIRECT_URL": "<URL_REDIRECTION>"
+    "REDIRECT_URL": "<URL_REDIRECTION>",
+    "OAUTH_WINDOW": "SW_MINIMIZE",
+    "CHECKER_WINDOW": "SW_MINIMIZE"
 }
