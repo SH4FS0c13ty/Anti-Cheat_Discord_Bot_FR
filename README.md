@@ -40,10 +40,10 @@ Définir la configuration d'Anti-Cheat :<br />
 `set CLIENT_ID|CLIENT_SECRET|TOKEN|HOST|PORT|OAUTH_WINDOW|CHECKER_WINDOW`<br />
 <br />
 ### Fiichiers utilisés<br />
-Fichier de logs:
-`logs/Anti-Cheat.log`
-Fichier d'erreurs:
-`logs/Anti-Cheat_traceback.log`
+Fichier de logs :<br />
+`logs/Anti-Cheat.log`<br />
+Fichier d'erreurs :<br />
+`logs/Anti-Cheat_traceback.log`<br />
 Fichier de configuration :<br />
 `scripts/config.json`<br />
 Liste noire des serveurs :<br />
