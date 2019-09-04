@@ -1,5 +1,5 @@
 # Anti-Cheat Discord Bot
-Anti-Cheat v1.3.1 (The Masterkiller) par SH4FS0c13ty<br />
+Anti-Cheat v1.4.0 (The Assassin) par SH4FS0c13ty<br />
 Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.<br />
 <br />
 English version : https://github.com/SH4FS0c13ty/Anti-Cheat_Discord_Bot
@@ -19,6 +19,11 @@ Exécutez "Anti-Cheat Requirements Installer.bat" et sélectionnez l'installatio
 <br />
 L'installation va commencer et aucune autre action n'est requise.
 <br />
+<br />
+La console principale d'Anti-Cheat vérifiera les mises à jour à chaque démarrage.
+<br />
+Si une mise à jour est trouvée, vous serez alerté sur la console principale.
+<br />
 
 ## Utilisation
 
@@ -26,7 +31,7 @@ Exécutez "Anti-Cheat.bat" et entrez la commande que vous voulez utiliser.<br />
 
 ### Panel de commandes<br />
 Processus Anti-Cheat :<br />
-`start|stop|restart`<br />
+`start|stop|restart|autostart`<br />
 Voir les listes et la configuration d'Anti-Cheat :<br />
 `show config|blacklist|cheaters_lists`<br />
 Réinitialiser les listes et la configuration d'Anti-Cheat :<br />
@@ -35,6 +40,10 @@ Définir la configuration d'Anti-Cheat :<br />
 `set CLIENT_ID|CLIENT_SECRET|TOKEN|HOST|PORT|OAUTH_WINDOW|CHECKER_WINDOW`<br />
 <br />
 ### Fiichiers utilisés<br />
+Fichier de logs:
+`logs/Anti-Cheat.log`
+Fichier d'erreurs:
+`logs/Anti-Cheat_traceback.log`
 Fichier de configuration :<br />
 `scripts/config.json`<br />
 Liste noire des serveurs :<br />

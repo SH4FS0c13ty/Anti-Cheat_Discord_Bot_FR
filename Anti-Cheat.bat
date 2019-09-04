@@ -10,10 +10,25 @@ echo ██╔══██║██║╚██╗██║   ██║   ██
 echo ██║  ██║██║ ╚████║   ██║   ██║      ╚██████╗██║  ██║███████╗██║  ██║   ██║   
 echo ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝       ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   
 echo.
-echo Anti-Cheat v1.3.1 (The Masterkiller) par SH4FS0c13ty
+echo Anti-Cheat v1.4.0 (The Assassin) par SH4FS0c13ty
 echo Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.
 echo.
 echo Tapez "help" pour voir le menu d'aide.
+echo.
+if exist scripts\\oauth_pid.txt (
+	for /F %%q in (scripts\\oauth_pid.txt) do (
+		taskkill /F /PID:%%q 2>NUL >NUL
+	)
+)
+if exist scripts\\check_pid.txt (
+	for /F %%p in (scripts\\check_pid.txt) do (
+		taskkill /F /PID:%%p 2>NUL >NUL
+	)
+)
+python scripts\\updater.py check
+echo.
+python scripts\\tools.py autostart start
+
 
 :prompt
 echo.
@@ -23,10 +38,13 @@ if /i "%start%" EQU "exit" exit
 if /i "%start%" EQU "help" goto help
 if /i "%start%" EQU "about" goto about
 if /i "%start%" EQU "license" goto license
+if /i "%start%" EQU "update" goto update
+if /i "%start%" EQU "clear" cls && goto prompt
 
 if /i "%start%" EQU "start" goto start
 if /i "%start%" EQU "stop" goto stop
 if /i "%start%" EQU "restart" goto restart
+if /i "%start%" EQU "autostart" goto autostart
 
 if /i "%start%" EQU "show config" goto show_conf
 if /i "%start%" EQU "show blacklist" goto show_bl
@@ -56,10 +74,13 @@ echo exit                              Quitter la console d'Anti-Cheat
 echo help                              Voir ce menu
 echo about                             Voir la section À Propos
 echo license                           Voir la licence
+echo update                            Mettre à jour Anti-Cheat
+echo clear                             Nettoyer la console
 echo.
 echo start                             Démarrer Anti-Cheat (Bot et serveur web)
 echo stop                              Arrêter Anti-Cheat (Bot et serveur web)
 echo restart                           Redémarrer Anti-Cheat (Bot et serveur web)
+echo autostart                         Définir la valeur autostart dans le fichier config.json
 echo.
 echo show config                       Voir la configuration
 echo show blacklist                    Voir la liste noire
@@ -89,7 +110,7 @@ echo ██╔══██║██║╚██╗██║   ██║   ██
 echo ██║  ██║██║ ╚████║   ██║   ██║      ╚██████╗██║  ██║███████╗██║  ██║   ██║   
 echo ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝       ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   
 echo.
-echo Anti-Cheat v1.3.1 (The Masterkiller) by SH4FS0c13ty
+echo Anti-Cheat v1.4.0 (The Assassin) par SH4FS0c13ty
 echo Un bot Discord qui éjecte les tricheurs d'après leur liste de serveurs et leur ID Pokémon GO.
 echo.
 echo Ce projet est né sur une demande de 123321mario (http://123321mario.tk/) qui
@@ -98,7 +119,11 @@ echo Comme j'aime mettre les mains dans le cambouis, j'ai commencé ce projet, l
 echo amélioré jusqu'à la dernière version disponible ici :
 echo https://github.com/SH4FS0c13ty/Anti-Cheat_Discord_Bot
 echo.
-scripts\tools.py contact
+python scripts\tools.py contact
+goto prompt
+
+:update
+python scripts\\updater.py update
 goto prompt
 
 :license
@@ -132,6 +157,10 @@ for /F %%p in (scripts\\check_pid.txt) do (
 )
 echo.
 python scripts\\main.py scripts\\config.json
+goto prompt
+
+:autostart
+python scripts\\tools.py autostart config
 goto prompt
 
 :show_conf
