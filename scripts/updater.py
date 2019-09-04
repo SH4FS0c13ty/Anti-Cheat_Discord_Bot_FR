@@ -143,7 +143,7 @@ def check_updates(command):
                     print("Vous avez déjà la dernière version d'Anti-Cheat !")
                     tools.log("[INFO] Aucune nouvelle mise à jour trouvée.")
             else:
-                print("Vous avez déjà la dernière version d'Anti-Cheat !")")
+                print("Vous avez déjà la dernière version d'Anti-Cheat !")
                 tools.log("[INFO] Aucune nouvelle mise à jour trouvée.")
     except KeyboardInterrupt:
         os.remove("updates.json")
